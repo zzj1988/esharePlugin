@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="esharePlugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>esharePlugin</name>
+    <js-module name="esharePlugin" src="www/esharePlugin.js">
+        <clobbers target="cordova.plugins.esharePlugin" />
+    </js-module>
+    <platform name="ios">
+            <framework src="src/ios/Eshare.framework" custom="true"/>
+            <header-file src="src/ios/esharePlugin.h" />
+            <source-file src="src/ios/esharePlugin.m" />
+            <resource-file src="src/ios/eshareWeb" target="src/ios/eshareWeb" />
+            <config-file parent="/*" target="config.xml">
+            <feature name="esharePlugin"><param name="ios-package" value="esharePlugin" /></feature>
+        </config-file>
+    </platform>
+</plugin>
